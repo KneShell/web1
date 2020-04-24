@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace myApp
+namespace CallCenter
 {
     public class Startup
     {
@@ -30,9 +30,8 @@ namespace myApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller = Home}/{action = Student}/{id?}");
-                    // 첫화면
+                   name: "default",
+                   template: "{controller=Home}/{action=Login}/{id?}");
             });
         }
     }

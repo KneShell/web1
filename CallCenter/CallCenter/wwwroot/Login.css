@@ -7,27 +7,35 @@
     margin-left: -230px;
     margin-top: -140px;
 }
+
 .logo {
-    background-image: url("../Img/newLogo.png");
+    background-image: url("lmg/Login_img/newLogo.png");
     background-repeat: no-repeat;
     width: 460px;
     height: 70px;
 }
+
 .img2 {
     background-repeat: no-repeat;
-    background-image: url("../Img/login_02.gif");
+    background-image: url(lmg/Login_img/login_02.gif);
     width: 460px;
     height: 130px;
 }
+
 .img3 {
     background-repeat: no-repeat;
-    background-image: url("../Img/login_03.gif");
+    background-image: url("lmg/Login_img/login_03.gif");
     width: 460px;
     height: 60px;
 }
-.img4_input {
+
+.img4 {
     background-repeat: no-repeat;
-    background-image: url("../Img/login_04.gif"); 
+    background-image: url("lmg/Login_img/login_04.gif");
     width: 460px;
     height: 20px;
+}
+
+table {
+    table-layout: fixed;
 }

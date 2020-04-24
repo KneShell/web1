@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyApp.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,7 +13,13 @@ namespace MyApp.Controllers
     {
         // GET: /<controller>/
         public IActionResult Student()
-        {
+        {   // Razor 파일 디스플레이
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Student(Student model)
+        {   // View에서 넘어오는 값들을 받음
             return View();
         }
     }
