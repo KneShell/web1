@@ -20,6 +20,10 @@ namespace MyApp.Controllers
         [HttpPost]
         public IActionResult Student(Student model)
         {   // View에서 넘어오는 값들을 받음
+            if (ModelState.IsValid)
+            {
+                // 모델에서 받아온 값에 대한 유효성 검사
+            }
             return View();
         }
     }
