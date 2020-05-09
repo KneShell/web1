@@ -18,6 +18,7 @@ namespace MyApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Student(Student model)
         {   // View에서 넘어오는 값들을 받음
             if (ModelState.IsValid)
