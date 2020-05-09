@@ -1,0 +1,505 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	(주)나루데이타 콜센터 시스템
+</title><link href="../DATA/Style/menu.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+</style>
+
+<Script Language="javascript" src="/js/common.js"></Script>
+
+<script language="javascript" src="/js/jquery-1.5.1.min.js"></script>
+
+<script language="javascript">
+    function fnMenuView(k) {
+        
+        if (k != null) {
+            $(k).parent().parent().children("tr").each(function() {
+                if ($(this).attr("id") == "viewoff") {
+                    $(this).show();
+                }
+                else {
+                    $(this).hide();
+                }
+            });
+            $(k).parent().hide();
+            $(k).parent().next("tr").show();
+            $(k).parent().next("tr").next("tr").show();
+        }
+    }
+
+//    function window.onload() {
+//        fnMenuView('');
+//    }
+
+
+    function Main1_Click(k) {
+        fnMenuView(k);
+    }
+
+    $(document).ready(function() {
+        fnMenuView('');
+    });
+</script>
+
+
+
+
+
+</head>
+
+<body>
+<form name="form1" method="post" action="menu.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMjI3MDkzNzU4ZGTZeFtX5hFoZ8ZKEixEHhgpLRDMSg==" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5EFA9A2C" />
+</div>
+<table width="180" height="100%" border="0" cellspacing="0" cellpadding="0" align="right">
+	<tr>
+		<td><img src="/images/left_top.gif" width="180" height="10"></td>
+	</tr>
+	
+	<tr>
+		<td height="100%" align="center" valign="top" background="/images/left_bg.gif">
+			<table width="160" border="0" cellspacing="0" cellpadding="0">
+				
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));"> <a href="/program/break_list.aspx" target="main">장애접수/처리</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/break_list.aspx" target="main"><td class="left_on" >장애접수/처리</td></a>
+				</tr>
+			
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+								
+							<tr>
+								<td class="sleft"><a href="/program/break_list.aspx" target="main">장애접수/처리 목록</a></td>
+							</tr>
+						
+							
+							
+							<tr>
+								<td class="sleft"><a href="/program/break_write.aspx" target="main">장애접수/처리 등록</a></td>
+							</tr>
+							<tr>
+							
+								<td class="sleft"><a href="/program/break_list2.aspx" target="main">조회</a></td>
+							
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/HappyCall_list.aspx" target="main">해피콜</a></td>
+							</tr>
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+                
+                
+                <tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));"> <a href="/program/break_list3.aspx" target="main">환경공사/정기정검</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/break_list3.aspx" target="main"><td class="left_on">환경공사/정기정검</td></a>
+				</tr>
+			
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/break_list3.aspx" target="main">환경공사 목록</a></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/break_write3.aspx" target="main">환경공사 등록</a></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/check_machinery_list.aspx" target="main">정기점검 목록</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/program/check_machinery_write.aspx" target="main">정기점검 등록</a></td>
+							
+							</tr>
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+                
+                <tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));"> <a href="/program/workdy_ENGI_list_Mon.aspx" target="main">기술팀 일일업무</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/workdy_list.aspx" target="main"><td class="left_on">기술팀 일일업무</td></a>
+				</tr>
+			
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							<tr>
+								<td class="sleft"><a href="/program/workdy_ENGI_list_Mon.aspx" target="main">일일업무 목록(전체)</a></td>
+							</tr>
+														
+							<tr>
+								<td class="sleft"><a href="/program/workdy_ENGI_list.aspx" target="main">일일업무 목록(개인)</a></td>
+							</tr>
+							<tr>
+								<td class="sleft"><a href="/program/workdy_ENGI_write.aspx" target="main">일일업무 등록</a></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/workdy_Report_list.aspx" target="main">업무보고서 목록</a></td>
+							</tr>
+						
+							<tr>
+								<td class="sleft"><a href="/program/workdy_Report_write.aspx" target="main">업무보고서 등록</a></td>
+							</tr>
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+                
+                <tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				
+               <tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" ><a href="/program/workdy_list2.aspx" target="main">연구개발팀 일일 업무</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/workdy_list2.aspx" target="main"><td class="left_on">연구개발팀 일일 업무</td></a>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/workdy_list2.aspx" target="main">연구개발팀 일일업무 목록</a></td>
+							</tr>
+							<tr>
+								<td class="sleft"><a href="/program/workdy_write2.aspx" target="main">연구개발팀 일일업무 등록</a></td>
+							</tr>
+							
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				
+				
+				
+                
+
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" ><a href="/program/machinery_list.aspx" target="main"> 제품/설치기기 관리</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/machinery_list.aspx" target="main"><td class="left_on">제품/설치기기 관리</td></a>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/machinery_list.aspx" target="main">설치기기 목록</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/program/machinery_write.aspx" target="main">설치기기 등록</a></td>
+							
+							</tr>
+							
+							
+							
+							<tr>
+								<td class="sleft"><a href="/program/product_list.aspx" target="main">제품 목록</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/program/product_write.aspx" target="main">제품 등록</a></td>
+							
+							</tr>
+						
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+           
+                
+				
+
+            
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" ><a href="/program/branch_list2.aspx" target="main">고객사/지점 관리</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/branch_list2.aspx" target="main"><td class="left_on">고객사/지점 관리</td></a>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/branch_list2.aspx" target="main">지점 목록</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/program/branch_write.aspx" target="main">지점 등록</a></td>
+							
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/customer_list.aspx" target="main">고객사 목록</a></td>
+							</tr>
+							
+							<tr>
+					
+								<td class="sleft"><a href="/program/customer_write.aspx" target="main">고객사 등록</a></td>
+				
+							</tr>
+							
+							
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+
+                
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" ><a href="/program/user_list.aspx" target="main">사용자 관리</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/user_list.aspx" target="main"><td class="left_on">사용자 관리</td></a>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/user_list.aspx" target="main">사용자 목록</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/program/user_write.aspx" target="main">사용자 등록</a></td>
+							
+							</tr>
+							
+							
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" >자료실</td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<td class="left_on">자료실</td>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/file/infill.wmv" target="main">인필 리본 교체 동영상</a></td>
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/file/gilt.wmv" target="main">금박 교체 동영상</a></td>
+							
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/file/rs.zip" target="main">원격지원</a></td>
+							
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/file/SC은행모점설치_20140926.zip" target="main">SC은행 설치파일</a></td>
+							
+							</tr>
+							
+							<tr>
+							
+								<td class="sleft"><a href="/file/우리은행.zip" target="main">우리은행 설치파일</a></td>
+							
+							</tr>
+							
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				
+				<tr id="viewoff">
+					<td class="left" onclick="return Main1_Click($(this));" ><a href="/program/notice_list.aspx" target="main">공지사항 관리</a></td>
+				</tr>
+
+				<tr id="viewon" style="display:none;">
+					<a href="/program/notice_list.aspx" target="main"><td class="left_on">공지사항 관리</td></a>
+				</tr>
+				
+				<tr id="viewsub" style="display:none;">
+					<td align="center" valign="top">
+						<table width="150" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="7" background="/images/left_ms_01.gif"></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/notice_list.aspx" target="main">공지사항 목록</a></td>
+							</tr>
+							
+							<tr>
+								<td class="sleft"><a href="/program/notice_write.aspx" target="main">공지사항 등록</a></td>
+							</tr>
+							
+							<tr>
+								<td><img src="/images/left_ms_01.gif" width="150" height="15"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td height="1" background="/images/left_line.gif"></td>
+				</tr>
+				
+				
+				
+				<tr>
+					<td>&nbsp;</td>
+				</tr>
+				
+			
+				<tr>
+					<td align="center"><img src="/images/call.gif" border="0" align="absmiddle" width="160" height="70"></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	
+	<tr>
+		<td><img src="/images/left_bottom.gif" width="180" height="20"></td>
+	</tr>
+
+	
+</table>
+
+</form> 
+</body>
+</html>
