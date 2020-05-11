@@ -1,32 +1,54 @@
-﻿@using MyApp.Models
-@model Student
+﻿@using MyApp.ViewModels
+@model StudentTeacherViewModels
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+@{ 
+    ViewBag.Title = "Student";
+}
 <h3>Add New Student</h3>
-<form class="form form-horizontal" asp-antiforgery="false" method="POST">
+<form class="form form-horizontal" method="POST">
     <div class="form-group">
         <img src="https://image.ibb.co/jKfYKx/computer.jpg" />
     </div>
     <div class="form-group">
         <div class="col-md-3">
             <label>Name:</label>
-            <input type="text" class="form-control" asp-for="name" />
-            <span asp-validation-for="name"></span>
+            <input type="text" class="form-control" asp-for="@Model.Student.name" />
+            <span asp-validation-for="@Model.Student.name"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-3">
             <label>Age:</label>
-            <input type="text" class="form-control" asp-for="age" />
-            <span asp-validation-for="age"></span>
+            <input type="text" class="form-control" asp-for="@Model.Student.age" />
+            <span asp-validation-for="@Model.Student.age"></span>
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-3">
             <label>Country:</label>
-            <input type="text" class="form-control" asp-for="country" />
-            <span asp-validation-for="country"></span>
+            <input type="text" class="form-control" asp-for="@Model.Student.country" />
+            <span asp-validation-for="@Model.Student.country"></span>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </div>
 </form>
+
+<hr />
+<h3>Our Teachers</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model.Teachers)
+        {
+            <tr>
+                <td>@teacher.Name</td>
+                <td>@teacher.Class</td>
+            </tr>
+        }
+    </tbody>
+</table>
