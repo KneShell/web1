@@ -9,6 +9,7 @@ namespace MyApp.Models
 {
     public class Student
     {
+        public int Id { get; set; }
         [MaxLength(50)]
         public string name { get; set; }
         [Range(15, 70)]

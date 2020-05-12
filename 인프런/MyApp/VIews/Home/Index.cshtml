@@ -1,4 +1,6 @@
-﻿@{
+﻿@model StudentTeacherViewModels
+
+@{
     ViewBag.Title = "Home";
 }
 
@@ -7,3 +9,5 @@
         <h1>환영합니다.</h1>
     </div>
 </div>
+
+@await Html.PartialAsync("_TeacherTable", Model);
