@@ -36,5 +36,10 @@ namespace MyApp.Data.Repositories
             var result = _context.Students.Find(id);
             return result;
         }
+
+        public void Edit(Student student)
+        {
+            _context.Update(student);
+        }
     }
 }

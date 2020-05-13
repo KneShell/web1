@@ -58,6 +58,8 @@ namespace MyApp.Controllers
                 // 모델에서 받아온 값에 대한 유효성 검사
                 _studentRepository.AddStudent(model.Student);
                 _studentRepository.Save();
+
+                ModelState.Clear();
             }
 
             var students = _studentRepository.GetAllStudent();
@@ -67,8 +69,6 @@ namespace MyApp.Controllers
                 Student = new Student(),
                 Students = students
             };
-
-            ModelState.Clear();
             return View(viewModel);
         }
 
@@ -76,6 +76,29 @@ namespace MyApp.Controllers
         {
             var result = _studentRepository.GetStudent(id);
             return View(result);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var result = _studentRepository.GetStudent(id);
+
+            return View(result);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Student student)
+        {   // View에서 넘어오는 값들을 받음
+            if (ModelState.IsValid)
+            {
+                // 모델에서 받아온 값에 대한 유효성 검사
+                _studentRepository.Edit(student);
+                _studentRepository.Save();
+
+                return RedirectToAction("Student");
+            }
+
+            return View(student);
         }
     }
 }
