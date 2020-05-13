@@ -10,6 +10,7 @@
     </div>
     <hr />
     <form method="post" class="form-horizental">
+        <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
             <label asp-for="Email">이메일</label>
             <input asp-for="Email" class="form-control" />
