@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Data.Repositories;
 using MyApp.Models;
@@ -36,6 +37,8 @@ namespace MyApp.Controllers
 
             return View(viewModel);
         }
+
+        [Authorize] // 허가되지 않은 사용자 차단
         public IActionResult Student()
         {   // Razor 파일 디스플레이
 
@@ -99,6 +102,19 @@ namespace MyApp.Controllers
             }
 
             return View(student);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var result = _studentRepository.GetStudent(id);
+
+            if (result != null)
+            {
+                _studentRepository.Delete(result);
+                _studentRepository.Save();
+            }
+
+            return RedirectToAction("Student");
         }
     }
 }

@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Data;
 using MyApp.Data.Repositories;
+using MyApp.Models;
 
 namespace MyApp
 {
@@ -29,6 +31,14 @@ namespace MyApp
             {
                 options.UseSqlServer(_config.GetConnectionString("MyAppConnection"));
             });
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 6;
+            })
+            .AddEntityFrameworkStores<MyAppContext>();
+
+
             services.AddTransient<DbSeeder>();
             // 트랜지언트 -> 한번쓰고 버리는 휘발성 인스턴스 생성
             services.AddScoped<ITeacherRepository, TeacherRepository>();
@@ -49,6 +59,9 @@ namespace MyApp
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
+            //  인증을 활성화시키는 메서드, 즉 UseAuthentication는 반드시 UseMvc보다 먼저 선언해야 작동
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
