@@ -25,6 +25,8 @@ namespace MyApp.Controllers
             _teacherRepository = teacherRepository;
             _studentRepository = studentRepository;
         }
+
+        [Authorize]
         public IActionResult Index()
         {
             var teachers = _teacherRepository.GetAllTeachers();

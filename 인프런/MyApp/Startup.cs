@@ -69,7 +69,7 @@ namespace MyApp
                    template: "{controller=Account}/{action=Login}/{id?}");
             });
 
-            seeder.seedDatabase().Wait();
+            //seeder.seedDatabase().Wait();
         }
     }
 }
