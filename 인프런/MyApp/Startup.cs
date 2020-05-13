@@ -36,6 +36,7 @@ namespace MyApp
             //services.AddSingleton
             // 싱글톤 -> 어플리케이션의 생명주기 동안 단 한번 인스턴스 생성
             // HTTP 요청이 있을떄마다 똑같은 인스턴스를 쓰게함
+            services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddMvc();
         }
 

@@ -13,17 +13,20 @@ namespace MyApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ITeacherRepository _repository;
+        private readonly ITeacherRepository _teacherRepository;
+        private readonly IStudentRepository _studentRepository;
 
         // GET: /<controller>/
 
-        public HomeController(ITeacherRepository repository)
+        public HomeController(ITeacherRepository teacherRepository,
+            IStudentRepository studentRepository)
         {
-            _repository = repository;
+            _teacherRepository = teacherRepository;
+            _studentRepository = studentRepository;
         }
         public IActionResult Index()
         {
-            var teachers = _repository.GetAllTeachers();
+            var teachers = _teacherRepository.GetAllTeachers();
 
             var viewModel = new StudentTeacherViewModels()
             {
@@ -59,6 +62,8 @@ namespace MyApp.Controllers
             if (ModelState.IsValid)
             {
                 // 모델에서 받아온 값에 대한 유효성 검사
+                _studentRepository.AddStudent(model.Student);
+                _studentRepository.Save();
             }
             return View();
         }
