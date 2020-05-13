@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Data;
+using MyApp.Data.Repositories;
 
 namespace MyApp
 {
@@ -28,11 +29,18 @@ namespace MyApp
             {
                 options.UseSqlServer(_config.GetConnectionString("MyAppConnection"));
             });
+            services.AddTransient<DbSeeder>();
+            // 트랜지언트 -> 한번쓰고 버리는 휘발성 인스턴스 생성
+            services.AddScoped<ITeacherRepository, TeacherRepository>();
+            // 스코프 -> 생성할때마다 새 인스턴스를 만듬
+            //services.AddSingleton
+            // 싱글톤 -> 어플리케이션의 생명주기 동안 단 한번 인스턴스 생성
+            // HTTP 요청이 있을떄마다 똑같은 인스턴스를 쓰게함
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, DbSeeder seeder)
         {
             if (env.IsDevelopment())
             {
@@ -46,6 +54,8 @@ namespace MyApp
                    name: "default",
                    template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            seeder.seedDatabase().Wait();
         }
     }
 }
